@@ -105,7 +105,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\ASUS\Desktop\sdlproject\sdl2-ttf_x64-windows\include\SDL2;C:\Users\ASUS\Desktop\sdlproject\SDL2_image-devel-2.8.2-VC\SDL2_image-2.8.2\include;C:\Users\ASUS\Desktop\sdlproject\SDL2-devel-2.32.8-VC\SDL2-2.32.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\이동하 Daniel\코딩\Team ToyoTech\HEART\sdl2-ttf_x64-windows\include\SDL2;D:\이동하 Daniel\코딩\Team ToyoTech\HEART\SDL2_image-devel-2.8.2-VC\SDL2_image-2.8.2\include;D:\이동하 Daniel\코딩\Team ToyoTech\HEART\SDL2-devel-2.32.8-VC\SDL2-2.32.8\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
