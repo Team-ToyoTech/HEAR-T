@@ -1,8 +1,8 @@
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_image.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include <iostream>
-#include "TTFGame.h"
-#include "balanceGame.h"
+#include "TTFGame.hpp"
+#include "balanceGame.hpp"
 
 int main(int argc, char* argv[]) {
 	//balanceGame();

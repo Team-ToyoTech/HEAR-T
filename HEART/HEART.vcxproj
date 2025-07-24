@@ -136,8 +136,8 @@
     <ClCompile Include="TTFGame.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="balanceGame.h" />
-    <ClInclude Include="TTFGame.h" />
+    <ClInclude Include="balanceGame.hpp" />
+    <ClInclude Include="TTFGame.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

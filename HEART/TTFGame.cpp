@@ -1,6 +1,6 @@
-#include "SDL2/SDL.h"
-#include "SDL2/SDL_image.h"
-#include "SDL2/SDL_ttf.h"
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
+#include <SDL2/SDL_ttf.h>
 #include <iostream>
 #include <sstream>
 #include <fstream>
@@ -9,7 +9,7 @@
 #include <locale>
 #include <codecvt>
 #include <ctime>
-#include "TTFGame.h"
+#include "TTFGame.hpp"
 #include <cpr/cpr.h>
 #include <thread>
 using namespace std;
