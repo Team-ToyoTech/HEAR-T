@@ -43,7 +43,7 @@ void TTFGame() {
         SDL_Quit();
         return;
     }
-    SDL_Surface* loadedSurface = IMG_Load("/x64/Debug/test2.png"); // ���� �̹��������� ����.. ��ε� �̻��ϰ�.. ��ġ�ڴ�
+    SDL_Surface* loadedSurface = IMG_Load("test2.png");
     SDL_Surface* loadedSurface2 = IMG_Load("test.png");
     if (!loadedSurface) {
         cout << "Unable to load image! SDL_image Error: " << IMG_GetError() << "\n";
