@@ -22,7 +22,7 @@
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
     <ProjectGuid>{4b80060d-b252-4ded-ace8-c64e0093d34f}</ProjectGuid>
-    <RootNamespace>Practice</RootNamespace>
+    <RootNamespace>HEART</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>HEART</ProjectName>
   </PropertyGroup>
