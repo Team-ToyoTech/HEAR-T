@@ -10,7 +10,6 @@
 #include <codecvt>
 #include <ctime>
 #include "TTFGame.h"
-#include <cpr/cpr.h>
 #include <thread>
 using namespace std;
 
@@ -44,7 +43,7 @@ void TTFGame() {
         SDL_Quit();
         return;
     }
-    SDL_Surface* loadedSurface = IMG_Load("C:/Users/ASUS/Desktop/sdlproject/Practice/Practice/x64/Debug/test2.png"); // ���� �̹��������� ����.. ��ε� �̻��ϰ�.. ��ġ�ڴ�
+    SDL_Surface* loadedSurface = IMG_Load("/x64/Debug/test2.png"); // ���� �̹��������� ����.. ��ε� �̻��ϰ�.. ��ġ�ڴ�
     SDL_Surface* loadedSurface2 = IMG_Load("test.png");
     if (!loadedSurface) {
         cout << "Unable to load image! SDL_image Error: " << IMG_GetError() << "\n";
