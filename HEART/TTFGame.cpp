@@ -59,8 +59,8 @@ void TTFGame() {
     }
     bool running = true;
     SDL_Event e;
-    SDL_Rect img1Rect = { 460, 390, 300, 300 };  // ���� �̹���
-    SDL_Rect img2Rect = { 1160, 390, 300, 300 }; // ������ �̹���
+    SDL_Rect img1Rect = { 460, 390, 300, 300 };
+    SDL_Rect img2Rect = { 1160, 390, 300, 300 };
 
     while (running) {
         while (SDL_PollEvent(&e)) {
