@@ -10,21 +10,19 @@
 #include <codecvt>
 #include <ctime>
 
-using namespace std;
-
 const int WINDOW_WIDTH = 1920;
 const int WINDOW_HEIGHT = 1080;
 
 struct GameObject {
-    wstring question1;
-    wstring question2;
-    wstring vsString;
+    std::wstring question1;
+    std::wstring question2;
+    std::wstring vsString;
 };
 
-vector<wstring> split_by_string(const wstring& str, const wstring& delimiter) {
-    vector<wstring> result;
+std::vector<std::wstring> split_by_string(const std::wstring& str, const std::wstring& delimiter) {
+    std::vector<std::wstring> result;
     size_t pos_start = 0, pos_end;
-    while ((pos_end = str.find(delimiter, pos_start)) != wstring::npos) {
+    while ((pos_end = str.find(delimiter, pos_start)) != std::wstring::npos) {
         result.push_back(str.substr(pos_start, pos_end - pos_start));
         pos_start = pos_end + delimiter.length();
     }
@@ -33,16 +31,16 @@ vector<wstring> split_by_string(const wstring& str, const wstring& delimiter) {
 }
 
 // 멀티라인 텍스트 렌더링
-void RenderMultilineText(SDL_Renderer* renderer, TTF_Font* font, const string& text,
+void RenderMultilineText(SDL_Renderer* renderer, TTF_Font* font, const std::string& text,
     const SDL_Rect& area, SDL_Color color) {
-    vector<string> lines;
-    string currentLine;
-    stringstream ss(text);
-    string word;
+    std::vector<std::string> lines;
+    std::string currentLine;
+    std::stringstream ss(text);
+    std::string word;
     int maxWidth = area.w;
 
     while (ss >> word) {
-        string testLine = currentLine.empty() ? word : currentLine + " " + word;
+        std::string testLine = currentLine.empty() ? word : currentLine + " " + word;
         int w = 0, h = 0;
         TTF_SizeUTF8(font, testLine.c_str(), &w, &h);
         if (w > maxWidth && !currentLine.empty()) {
@@ -59,7 +57,7 @@ void RenderMultilineText(SDL_Renderer* renderer, TTF_Font* font, const string& t
     int totalHeight = static_cast<int>(lines.size()) * lineHeight;
     int y = area.y + (area.h - totalHeight) / 2;
 
-    for (const string& line : lines) {
+    for (const std::string& line : lines) {
         SDL_Surface* surface = TTF_RenderUTF8_Blended(font, line.c_str(), color);
         SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, surface);
         int textW, textH;
@@ -122,12 +120,12 @@ void balanceGame() {
     SDL_Color textColor = { 255, 255, 255 };
     SDL_Color boxColor = { 30, 64, 175, 255 };
 
-    wifstream in(L"balanceGame.txt");
-    in.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
-    vector<GameObject> balanceGameList;
-    wstring s;
+    std::wifstream in(L"balanceGame.txt");
+    in.imbue(std::locale(std::locale(), new std::codecvt_utf8<wchar_t>));
+    std::vector<GameObject> balanceGameList;
+    std::wstring s;
     while (getline(in, s)) {
-        vector<wstring> v = split_by_string(s, L" vs ");
+        std::vector<std::wstring> v = split_by_string(s, L" vs ");
         if (v.size() == 2) {
             GameObject g;
             g.question1 = v[0];
@@ -140,9 +138,9 @@ void balanceGame() {
 
     SDL_Event event;
     bool running = true;
-    vector<bool> visited(balanceGameList.size(), false);
+    std::vector<bool> visited(balanceGameList.size(), false);
     int stringIndex = 0;
-    wstring_convert<std::codecvt_utf8<wchar_t>> converter;
+    std::wstring_convert<std::codecvt_utf8<wchar_t>> converter;
 
     int cnt = 0;
     while (running) {
@@ -160,9 +158,9 @@ void balanceGame() {
         SDL_Rect topRect = { 200, 250, 1520, 150 };
         SDL_Rect bottomRect = { 200, 600, 1520, 150 };
 
-        string q1 = converter.to_bytes(balanceGameList[stringIndex].question1);
-        string q2 = converter.to_bytes(balanceGameList[stringIndex].question2);
-        string vs = converter.to_bytes(balanceGameList[stringIndex].vsString);
+        std::string q1 = converter.to_bytes(balanceGameList[stringIndex].question1);
+        std::string q2 = converter.to_bytes(balanceGameList[stringIndex].question2);
+        std::string vs = converter.to_bytes(balanceGameList[stringIndex].vsString);
 
         // Draw box
         DrawRoundedRect(renderer, topRect, 20, boxColor);

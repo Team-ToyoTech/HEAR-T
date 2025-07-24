@@ -11,7 +11,6 @@
 #include <ctime>
 #include "TTFGame.h"
 #include <thread>
-using namespace std;
 
 const int WINDOW_WIDTH = 1920;
 const int WINDOW_HEIGHT = 1080;
@@ -31,7 +30,7 @@ void TTFGame() {
     SDL_Color textColor = { 255, 255, 255 };
     SDL_Color boxColor = { 30, 64, 175, 255 };
     if (!renderer) {
-        cout << "Renderer could not be created! SDL_Error: " << SDL_GetError() << "\n";
+        std::cout << "Renderer could not be created! SDL_Error: " << SDL_GetError() << "\n";
         SDL_DestroyWindow(window);
         SDL_Quit();
         return;
@@ -46,16 +45,16 @@ void TTFGame() {
     SDL_Surface* loadedSurface = IMG_Load("test2.png");
     SDL_Surface* loadedSurface2 = IMG_Load("test.png");
     if (!loadedSurface) {
-        cout << "Unable to load image! SDL_image Error: " << IMG_GetError() << "\n";
+        std::cout << "Unable to load image! SDL_image Error: " << IMG_GetError() << "\n";
     }
     if (!loadedSurface2) {
-        cout << "Unable to load image! SDL_image Error: " << IMG_GetError() << "\n";
+        std::cout << "Unable to load image! SDL_image Error: " << IMG_GetError() << "\n";
     }
     SDL_Texture* texture = SDL_CreateTextureFromSurface(renderer, loadedSurface);
     SDL_Texture* texture2 = SDL_CreateTextureFromSurface(renderer, loadedSurface2);
     SDL_FreeSurface(loadedSurface);
     if (!texture) {
-        cout << "Unable to create texture from surface! SDL Error: " << SDL_GetError() << "\n";
+        std::cout << "Unable to create texture from surface! SDL Error: " << SDL_GetError() << "\n";
     }
     bool running = true;
     SDL_Event e;
