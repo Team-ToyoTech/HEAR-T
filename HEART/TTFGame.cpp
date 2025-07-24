@@ -9,7 +9,7 @@
 #include <locale>
 #include <codecvt>
 #include <ctime>
-#include "TTFGame.hpp"
+#include "TTFGame.h"
 #include <cpr/cpr.h>
 #include <thread>
 using namespace std;

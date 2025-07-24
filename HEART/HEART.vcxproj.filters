@@ -26,10 +26,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="balanceGame.hpp">
+    <ClInclude Include="balanceGame.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="TTFGame.hpp">
+    <ClInclude Include="TTFGame.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
